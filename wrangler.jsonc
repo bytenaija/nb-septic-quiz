@@ -1,0 +1,1 @@
+{"account_id":"afc92595c65e7247ad546cc945893d2f","compatibility_date":"2026-10-18","compatibility_flags":["nodejs_compat"],"d1_databases":[{"binding":"DB","database_id":"8191b462-fff3-4fcb-927e-9f6e0044ae5b","database_name":"nb-septic-quiz-db"}],"main":"./worker/index.ts","name":"nb-septic-quiz"}
