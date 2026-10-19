@@ -51,8 +51,13 @@ function Drill() {
   };
 
   const next = () => {
-    if (idx < deck.length - 1) { setIdx(idx + 1); setRevealed(false); }
-    else { setDeck(shuffle(deck)); setIdx(0); setRevealed(false); }
+    setIdx((idx + 1) % deck.length);
+    setRevealed(false);
+  };
+
+  const prev = () => {
+    setIdx((idx - 1 + deck.length) % deck.length);
+    setRevealed(false);
   };
 
   if (authed === null) return <div className="loading">Loading...</div>;
@@ -86,6 +91,10 @@ function Drill() {
         ) : (
           <button className="btn" onClick={() => setRevealed(true)}>Reveal model answer</button>
         )}
+      </div>
+      <div className="seg" style={{ marginTop: 12 }}>
+        <button onClick={prev}>← Back</button>
+        <button onClick={next}>Forward →</button>
       </div>
       <p className="sub">Say your answer out loud before revealing. That is the whole point.</p>
     </>
